@@ -15,16 +15,16 @@
         <?= $this->include('cabecera/menu.php');?>
     <!--  END NAVBAR  -->
 
-    <!--  BEGIN MAIN CONTAINER  -->
+    <!--  BEGIN MAIN CONTAINER (SIDE BAR)  -->
         <?= $this->include('cabecera/navbar.php');?>
+        
     <!--  END SIDEBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
-            <div class="container">
-                
-
-                    <!-- BREADCRUMB -->
+        <div id="content" class="main-container">
+            <div class="layout-px-spacing">
+                <div class="middle-content container-xxl p-0">
+    <!-- BREADCRUMB -->
                     <div class="page-meta">
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -32,15 +32,20 @@
                             </ol>
                         </nav>
                     </div>
-                    <!-- /BREADCRUMB -->
+    <!-- /BREADCRUMB -->
+                    <div class="row layout-top-spacing">
+
+                    <!-- Inicia la tabla -->
                     <div class="row layout-top-spacing">
                     <h3><br>Hola, listare alumnos a continuacion:</h3>
-    
-    
+                    </div>
+
                     <div class="d-flex justify-content-end">
                         <a href="<?php echo base_url('/create'); ?>" class="btn btn-success mb-2">Crear Usuario</a>
                     </div>
-                        <table class="table">
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                            <div class="widget-content widget-content-area br-8">
+                        <table id="zero-config" class="table dt-table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -63,12 +68,25 @@
                 <?php } ?>
                         </tbody>
                         </table>
-    
+                        </div>
                     </div>
-                
+                        
+                        <!-- Terminan las tablas -->
+                    </div>
+                </div>
             </div>
         </div>
-        
+                
+
+                    
+    
+                    
+                    <!-- Final de Personas -->
+                
+                    <!-- Inicio de usuarios -->
+                    
+                    <!-- Fin usuarios -->
+
 <!-- modal -->
 
 <!-- end modal -->

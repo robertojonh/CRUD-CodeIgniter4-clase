@@ -22,39 +22,35 @@
     <!--  BEGIN CONTENT AREA  -->
     <div id="content" class="main-content">
             <div class="container">
-                
+    <!-- BREADCRUMB -->
+              <div class="page-meta">
+                <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?php echo base_url('/view_user ');?>">Tabla</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Editar</li>
+                  </ol>
+                </nav>
+              </div>
 
-                    <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('/view_user ');?>">Tabla</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Editar</li>
-                            </ol>
-                        </nav>
-                    </div>
-
-  <div class="container mt-5">
-    <form method="post" id="update_user" name="update_user" 
-    action="<?php echo base_url('/update') ?>">
-      <input type="hidden" name="id" id="id" value="<?php echo $user_obj['id']; ?>">
-      <div class="form-group">
-        <label>Nombre</label>
-        <input type="text" name="nombre" class="form-control" value="<?php echo $user_obj['nombre']; ?>">
-      </div>
-      <div class="form-group">
-        <label>Primer Apellido</label>
-        <input type="text" name="primer_apellido" class="form-control" value="<?php echo $user_obj['primer_apellido']; ?>">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-danger btn-block">Actualizar Datos</button>
-      </div>
-    </form>
-  </div>
-
-
- </div>
-    </div>
+              <div class="container mt-5">
+                <form method="post" id="update_user" name="update_user" 
+                  action="<?php echo base_url('/update') ?>">
+                    <input type="hidden" name="id" id="id" value="<?php echo $user_obj['id']; ?>">
+                      <div class="form-group">
+                        <label>Nombre</label>
+                          <input type="text" name="nombre" class="form-control" value="<?php echo $user_obj['nombre']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Primer Apellido</label>
+                          <input type="text" name="primer_apellido" class="form-control" value="<?php echo $user_obj['primer_apellido']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn-block">Actualizar Datos</button>
+                      </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
     
         <!--  ENDS CONTENT AREA -->
