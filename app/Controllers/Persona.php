@@ -43,7 +43,7 @@ class Persona extends Controller{
             'primer_apellido'  => $this->request->getVar('primer_apellido'),
         ];
         $userModel->update($id, $data);
-        return $this->response->redirect(site_url('/view_user'));
+        return $this->response->redirect(base_url('/view_user'));
     }
     
     // delete user

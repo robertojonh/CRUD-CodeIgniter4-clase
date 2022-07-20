@@ -13,4 +13,8 @@ class Home extends BaseController
     {
         return view('view_hola');
     }
+    public function tablas()
+    {
+        return view('editar-new');
+    }
 }

@@ -36,6 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/edit-new', 'Home::tablas');
 $routes->get('/view_user', 'Persona::index');
 $routes->get('create', 'Persona::create');
 $routes->post('creado', 'Persona::store');

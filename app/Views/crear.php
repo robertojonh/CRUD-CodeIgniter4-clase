@@ -13,7 +13,7 @@
   <body>
     <h1 class="d-flex justify-content-center">Creando una nueva persona</h1>
     <div class="container mt-5">
-        <form action="<?= base_url('/creado')?>" method="POST" id="add_create" name="add_create">
+        <form action="<?php echo base_url('/creado');?>" method="POST" id="add_create" name="add_create">
         <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" name="nombre" class="form-control">
