@@ -22,54 +22,57 @@
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
             <div class="container">
-                <div class="container">
+                
 
                     <!-- BREADCRUMB -->
                     <div class="page-meta">
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Table</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Bootstrap</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tabla</li>
                             </ol>
                         </nav>
                     </div>
                     <!-- /BREADCRUMB -->
                     <div class="row layout-top-spacing">
-                    <h3>Hola, listare alumnos a continuacion:</h3>
+                    <h3><br>Hola, listare alumnos a continuacion:</h3>
     
     
-    <div class="d-flex justify-content-end">
-        <a href="<?php echo base_url('/create'); ?>" class="btn btn-success mb-2">Crear Usuario</a>
-    </div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">nombre</th>
-                    <th scope="col">apellido</th>
-                    <th scope="col">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
+                    <div class="d-flex justify-content-end">
+                        <a href="<?php echo base_url('/create'); ?>" class="btn btn-success mb-2">Crear Usuario</a>
+                    </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">NOMBRE</th>
+                                    <th scope="col">APELLIDO</th>
+                                    <th scope="col">OPCIONES</th>
+                                </tr>
+                            </thead>
+                        <tbody>
                 <?php foreach($personas as $persona){  ?>
-                <tr>
-                    <td scope="row"><?php echo $persona['id']; ?></td>
-                    <td><?=$persona['nombre']; ?></td>
-                    <td><?=$persona['primer_apellido']; ?></td>
-                    <td>
-                        <a name="" id="" class="btn btn-primary" href="<?php echo base_url('edit_user/'.$persona['id']);?>" role="button">Editar</a>
-                        <a name="" id="" class="btn btn-danger" href="<?php echo base_url('delete/'.$persona['id']);?>" role="button">Eliminar</a>
-                    </td>
-                </tr>
+                            <tr>
+                                <td scope="row"><?php echo $persona['id']; ?></td>
+                                <td><?=$persona['nombre']; ?></td>
+                                <td><?=$persona['primer_apellido']; ?></td>
+                                <td>
+                                    <a name="" id="" class="btn btn-primary" href="<?php echo base_url('edit_user/'.$persona['id']);?>" role="button">Editar</a>
+                                    <a name="" id="" class="btn btn-danger" href="<?php echo base_url('delete/'.$persona['id']);?>" role="button">Eliminar</a>
+                                </td>
+                            </tr>
                 <?php } ?>
-            </tbody>
-        </table>
+                        </tbody>
+                        </table>
     
                     </div>
-                </div>
+                
             </div>
         </div>
         
+<!-- modal -->
+
+<!-- end modal -->
+
         <!--  ENDS CONTENT AREA -->
 
             <!--  BEGIN FOOTER  -->

@@ -1,16 +1,38 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS v5.2.0-beta1 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <?= $this->include('cabecera/header.php');?>
   </head>
-  <body>
+  <body class="layout-boxed" data-bs-spy="scroll" data-bs-target="#navSection" data-bs-offset="140">
+      
+    <!-- BEGIN LOADER -->
+    <div id="load_screen"> <div class="loader"> <div class="loader-content">
+        <div class="spinner-grow align-self-center"></div>
+    </div></div></div>
+    <!--  END LOADER -->
+
+    <!--  BEGIN NAVBAR  -->
+        <?= $this->include('cabecera/menu.php');?>
+    <!--  END NAVBAR  -->
+
+    <!--  BEGIN MAIN CONTAINER  -->
+        <?= $this->include('cabecera/navbar.php');?>
+    <!--  END SIDEBAR  -->
+
+    <!--  BEGIN CONTENT AREA  -->
+    <div id="content" class="main-content">
+            <div class="container">
+                
+
+                    <!-- BREADCRUMB -->
+                    <div class="page-meta">
+                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('/view_user ');?>">Tabla</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Editar</li>
+                            </ol>
+                        </nav>
+                    </div>
 
   <div class="container mt-5">
     <form method="post" id="update_user" name="update_user" 
@@ -25,12 +47,30 @@
         <input type="text" name="primer_apellido" class="form-control" value="<?php echo $user_obj['primer_apellido']; ?>">
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-danger btn-block">Save Data</button>
+        <button type="submit" class="btn btn-danger btn-block">Actualizar Datos</button>
       </div>
     </form>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+ </div>
+    </div>
+
+    
+        <!--  ENDS CONTENT AREA -->
+
+            <!--  BEGIN FOOTER  -->
+            <?= $this->include('cabecera/footer.php');?>
+            <!--  END FOOTER  -->
+            
+        </div>
+        <!--  END CONTENT AREA  -->
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+                    <?= $this->include('cabecera/footer_js.php');?>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
   <script>
@@ -59,10 +99,8 @@
       })
     }
   </script>
+    <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-  </body>
+    <script>var base_url="<?php echo base_url();?>";</script>
+</body>
 </html>
