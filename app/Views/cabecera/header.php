@@ -16,4 +16,15 @@
     <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
     <link href="<?php echo base_url(); ?>/assets/src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
+
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/src/plugins/src/sweetalerts2/sweetalerts2.css">
+    
+    <link href="<?php echo base_url(); ?>/assets/src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/src/plugins/css/light/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+
+    <link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/src/plugins/css/dark/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+
     <!-- END PAGE LEVEL CUSTOM STYLES -->

@@ -62,7 +62,8 @@
                                 <td><?=$persona['primer_apellido']; ?></td>
                                 <td>
                                     <a name="" id="" class="btn btn-primary" href="<?php echo base_url('edit_user/'.$persona['id']);?>" role="button">Editar</a>
-                                    <a name="" id="" class="btn btn-danger" href="<?php echo base_url('delete/'.$persona['id']);?>" role="button">Eliminar</a>
+                                    <a name="" id="" class="btn btn-danger confirmo" href="<?php echo base_url('delete/'.$persona['id']);?>" role="button">Eliminar</a>
+                                    <button class="btn btn-primary confirmo">Eliminar</button>
                                 </td>
                             </tr>
                 <?php } ?>
@@ -105,7 +106,27 @@
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
                     <?= $this->include('cabecera/footer_js.php');?>
     <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
-
+    <script>
+        document.querySelector('.widget-content .confirmo').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+            )
+        }
+    })
+})
+    </script>
     <script>var base_url="<?php echo base_url();?>";</script>
 </body>
 </html>

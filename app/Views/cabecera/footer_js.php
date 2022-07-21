@@ -6,6 +6,13 @@
     <script src="<?php echo base_url(); ?>/assets/src/plugins/src/mousetrap/mousetrap.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/app.js"></script>
     <script src="<?php echo base_url(); ?>/assets/src/assets/js/custom.js"></script>
+
+    <!-- BEGIN THEME GLOBAL STYLE -->
+    <script src="<?php echo base_url(); ?>/assets/src/assets/js/scrollspyNav.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/src/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/src/plugins/src/sweetalerts2/custom-sweetalert.js"></script>
+    <!-- END THEME GLOBAL STYLE -->  
+
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
