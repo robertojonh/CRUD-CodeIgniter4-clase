@@ -14,6 +14,12 @@ class Persona extends Controller{
     public function create(){
         return view('crear');
     }
+    public function singin(){
+        return view('inicioSesion/singin');
+    }
+    public function singup(){
+        return view('inicioSesion/singup');
+    }
  
     // insert data
     

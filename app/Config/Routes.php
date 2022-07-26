@@ -42,6 +42,8 @@ $routes->post('creado', 'Persona::store');
 $routes->get('edit_user/(:num)', 'Persona::singleUser/$1');
 $routes->post('update', 'Persona::update');
 $routes->get('delete/(:num)', 'Persona::delete/$1');
+$routes->get('/singin', 'Persona::singin');
+$routes->get('/singup', 'Persona::singup');
 
 /*
  * --------------------------------------------------------------------
