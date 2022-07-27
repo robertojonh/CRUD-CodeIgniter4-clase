@@ -45,6 +45,21 @@ $routes->get('delete/(:num)', 'Persona::delete/$1');
 $routes->get('/singin', 'Persona::singin');
 $routes->get('/singup', 'Persona::singup');
 
+$routes->get('/acceder', 'Acceso::acceder');
+$routes->post('/acceder', 'Acceso::acceder_login');
+$routes->get('/recuperar', 'Acceso::recuperar');
+$routes->get('/salir', 'Acceso::salir');
+
+$routes->get('/probando', 'Acceso::probando_shield');
+$routes->get('/Edificios', 'Edificios::listado');
+$routes->get('/Edificios/nuevo', 'Edificios::nuevo');
+$routes->post('/Edificios/nuevo', 'Edificios::guardar');
+
+
+$routes->get('/Usuario/perfil', 'Usuario::perfil');
+
+service('auth')->routes($routes);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

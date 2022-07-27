@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa0291d7d0073e54b2ba94f0dd658c09",
+    "content-hash": "2a6af967f6faeac30a9790252304e963",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -63,6 +63,129 @@
                 "source": "https://github.com/codeigniter4/CodeIgniter4"
             },
             "time": "2022-06-16T13:53:25+00:00"
+        },
+        {
+            "name": "codeigniter4/settings",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeigniter4/settings.git",
+                "reference": "0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeigniter4/settings/zipball/0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d",
+                "reference": "0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "codeigniter/coding-standard": "^1.1",
+                "codeigniter4/codeigniter4": "dev-develop",
+                "fakerphp/faker": "^1.9",
+                "mockery/mockery": "^1.0",
+                "nexusphp/cs-config": "^3.1",
+                "nexusphp/tachycardia": "^1.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpstan/phpstan": "^1.0",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CodeIgniter\\Settings\\": "src"
+                },
+                "exclude-from-classmap": [
+                    "**/Database/Migrations/**"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lonnie Ezell",
+                    "email": "lonnieje@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Settings library for CodeIgniter 4",
+            "homepage": "https://github.com/codeigniter4/settings",
+            "keywords": [
+                "Settings",
+                "codeigniter",
+                "codeigniter4"
+            ],
+            "support": {
+                "issues": "https://github.com/codeigniter4/settings/issues",
+                "source": "https://github.com/codeigniter4/settings/tree/v2.1.0"
+            },
+            "time": "2021-11-22T17:30:18+00:00"
+        },
+        {
+            "name": "codeigniter4/shield",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeigniter4/shield.git",
+                "reference": "f96bdad8c28d8bc2c7d1f9dc7d2b1e7c98d9db07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeigniter4/shield/zipball/f96bdad8c28d8bc2c7d1f9dc7d2b1e7c98d9db07",
+                "reference": "f96bdad8c28d8bc2c7d1f9dc7d2b1e7c98d9db07",
+                "shasum": ""
+            },
+            "require": {
+                "codeigniter4/settings": "^2.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "provide": {
+                "codeigniter4/authentication-implementation": "1.0"
+            },
+            "require-dev": {
+                "codeigniter4/devkit": "^1.0",
+                "codeigniter4/framework": "^4.1",
+                "mockery/mockery": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CodeIgniter\\Shield\\": "src"
+                },
+                "exclude-from-classmap": [
+                    "**/Database/Migrations/**"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lonnie Ezell",
+                    "email": "lonnieje@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Authentication and Authorization for CodeIgniter 4",
+            "homepage": "https://github.com/codeigniter4/shield",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "codeigniter",
+                "codeigniter4"
+            ],
+            "support": {
+                "issues": "https://github.com/codeigniter4/shield/issues",
+                "source": "https://github.com/codeigniter4/shield/tree/develop"
+            },
+            "time": "2022-07-26T10:28:23+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2036,16 +2159,16 @@
         },
         {
             "name": "mikey179/vfsstream",
-            "version": "v1.6.10",
+            "version": "v1.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bovigo/vfsStream.git",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85"
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/250c0825537d501e327df879fb3d4cd751933b85",
-                "reference": "250c0825537d501e327df879fb3d4cd751933b85",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
+                "reference": "17d16a85e6c26ce1f3e2fa9ceeacdc2855db1e9f",
                 "shasum": ""
             },
             "require": {
@@ -2083,7 +2206,7 @@
                 "source": "https://github.com/bovigo/vfsStream/tree/master",
                 "wiki": "https://github.com/bovigo/vfsStream/wiki"
             },
-            "time": "2021-09-25T08:05:01+00:00"
+            "time": "2022-02-23T02:02:42+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -4086,7 +4209,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "codeigniter4/shield": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

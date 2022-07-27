@@ -136,5 +136,6 @@
     <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 
     <script>var base_url="<?php echo base_url();?>";</script>
+    <script src="<?php echo base_url(); ?>/assets/src/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
