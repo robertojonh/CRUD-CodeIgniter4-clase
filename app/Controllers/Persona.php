@@ -23,16 +23,15 @@ class Persona extends Controller{
 
     public function perfil(){
         if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
-          
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
         $data['sistema_funcion'] = "perfil";
         $data['usuario'] = $this->datos_usuario();
-
+        
         $d_persona = new Personas();
-        $datosP['personas'] = $d_persona->orderBy('id','ASC')->findAll();
+        $data['personas'] = $d_persona->orderBy('id','ASC')->findAll();
 
-        return view('listar',$datosP,$data);
+        return view('listar',$data);
     }
     // add user form
     public function create(){

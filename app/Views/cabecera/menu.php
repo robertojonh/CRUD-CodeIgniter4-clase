@@ -157,7 +157,7 @@
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="avatar-container">
                             <div class="avatar avatar-sm avatar-indicators avatar-online">
-                            
+                            <img alt="avatar" src="<?php echo base_url(); ?>/uploads/perfil/<?=$usuario['foto'] ?>" class="rounded-circle">
                             </div>
                         </div>
                     </a>
@@ -169,7 +169,8 @@
                                     &#x1F44B;
                                 </div>
                                 <div class="media-body">
-                                
+                                <h5><?=$usuario['nombres'] ?></h5>
+                                <p><?=$usuario['puesto'];?></p>
                                 </div>
                             </div>
                         </div>

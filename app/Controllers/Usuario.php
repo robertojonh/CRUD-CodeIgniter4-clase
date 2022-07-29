@@ -49,13 +49,16 @@ class Usuario extends Controller{
           
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
+        
         $data['sistema_funcion'] = "listado";
         $data['usuario']['usuario_username'] = auth()->getUser()->username;
         $data['usuario']['usuario_puesto'] = 'Developer';
 
         $db = db_connect();
         $usuario = $db->query('SELECT u.id, u.username, u.created_at, ud.estatus, ud.nombres, ud.primer_apellido, ud.segundo_apellido, ud.puesto, ud.telefono, ud.observaciones, ud.foto, ud.nivel, au.type, au.secret, au.last_used_at from users u  left join users_details ud on u.username =  ud.username left join auth_identities au on u.id =  au.user_id ');
-        $data['usuario'] =  $usuario->getResultArray();
+        $data['usuarios'] =  $usuario->getResultArray();
 
 
         return view ('usuario/listar',$data);
@@ -64,6 +67,9 @@ class Usuario extends Controller{
 
     public function editar_perfil(){
         $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Usuario";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
         $data['sistema_clase'] = "Acceso";
         $data['sistema_funcion'] = "acceder";
 
@@ -97,6 +103,10 @@ class Usuario extends Controller{
 
     // show single user
     public function singleUser2($id = null){
+        $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Usuario";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
         $userModel2 = new UsuarioC();
         $data['user_obj'] = $userModel2->where('id', $id)->first();
         return view('usuario/editarp', $data);
@@ -104,6 +114,7 @@ class Usuario extends Controller{
     // update user data
    
     public function update2(){
+        
         $userModel2 = new UsuarioC();
         $id = $this->request->getVar('id');
         $data = [
@@ -121,7 +132,11 @@ class Usuario extends Controller{
     }
 
     public function crear(){
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Usuario";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
         return view ('usuario/crear',$data);
     }
 
