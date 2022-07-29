@@ -47,10 +47,8 @@ $routes->get('/singup', 'Persona::singup');
 
 $routes->get('/acceder', 'Acceso::acceder');
 $routes->post('/acceder', 'Acceso::acceder_login');
-
 $routes->get('/register', 'Acceso::register');
 $routes->post('/probando', 'Acceso::probando_shield');
-
 $routes->get('/recuperar', 'Acceso::recuperar');
 $routes->get('/salir', 'Acceso::salir');
 
@@ -65,6 +63,9 @@ $routes->get('/Usuario/editar', 'Usuario::editar_perfil');
 $routes->get('/Usuario/listar', 'Usuario::listado');
 $routes->get('Usuario/edit_user2/(:num)', 'Usuario::singleUser2/$1');
 $routes->post('Usuario/update2', 'Usuario::update2');
+$routes->get('/Usuario/crear', 'Usuario::crear');
+
+
 service('auth')->routes($routes);
 
 /*

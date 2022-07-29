@@ -44,7 +44,10 @@
 
 <div class="usr-tasks ">
 <div class="widget-content widget-content-area">
-<h3 class="">Task</h3>
+<h3 class="">Lista de Usuarios</h3>
+<div class="d-flex justify-content-end">
+                        <a href="<?php echo base_url('/Usuario/crear'); ?>" class="btn btn-success mb-2">Crear Usuario</a>
+                    </div>
 <div class="table-responsive">
 <table id="zero-config" class="table dt-table-hover">
                             <thead>

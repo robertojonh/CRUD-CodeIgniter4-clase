@@ -120,4 +120,9 @@ class Usuario extends Controller{
         return $this->response->redirect(base_url('/Usuario/listar'));
     }
 
+    public function crear(){
+        $data['configuracion'] = $this->configuracion;
+        return view ('usuario/crear',$data);
+    }
+
 }
