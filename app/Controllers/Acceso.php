@@ -78,12 +78,12 @@ class Acceso extends Controller{
     }
     public function probando_shield(){
 
-        $username = 'ricardo';
-        $email = 'ricardo.oax@gmail.com';
-        $password = 'Devel0p3r';
-        $nombres = 'Ricardo';
-        $primer_apellido = 'Baños';
-        $segundo_apellido = 'Solis';
+        $username = $this->request->getVar('username');
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+        $nombres = $this->request->getVar('nombres');
+        $primer_apellido = $this->request->getVar('primer_apellido');
+        $segundo_apellido = $this->request->getVar('segundo_apellido');
         $puesto = 'Developer';
         $telefono = '9511147641';
         $observaciones = 'Administrador del sistema';
@@ -92,8 +92,8 @@ class Acceso extends Controller{
 
         $users = model('UserModel');
         $nuevo_usuario_datos = new User([
-            'username' => $this->request->getVar('username'),
-            'email'    => $this->request->getVar('email'),
+            'username' => $username,
+            'email'    => $email,
             'password' => $password,
         ]);
 

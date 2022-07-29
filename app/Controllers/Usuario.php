@@ -107,8 +107,14 @@ class Usuario extends Controller{
         $userModel2 = new UsuarioC();
         $id = $this->request->getVar('id');
         $data = [
+            'username'  => $this->request->getVar('username'),
             'nombres' => $this->request->getVar('nombres'),
             'primer_apellido'  => $this->request->getVar('primer_apellido'),
+            'segundo_apellido'  => $this->request->getVar('segundo_apellido'),
+            'puesto'  => $this->request->getVar('puesto'),
+            'telefono'  => $this->request->getVar('telefono'),
+            'observaciones'  => $this->request->getVar('observaciones'),
+            
         ];
         $userModel2->update($id, $data);
         return $this->response->redirect(base_url('/Usuario/listar'));

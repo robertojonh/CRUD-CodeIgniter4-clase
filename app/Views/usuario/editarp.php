@@ -36,14 +36,36 @@
                 <form method="post" id="update_user" name="update_user" 
                   action="<?php echo base_url('/Usuario/update2') ?>">
                     <input type="hidden" name="id" id="id" value="<?php echo $user_obj['id']; ?>">
+                    <div class="form-group">
+                        <label>Nombre de uusario (username)</label>
+                          <input type="text" name="username" class="form-control" value="<?php echo $user_obj['username']; ?>">
+                      </div>
+
                       <div class="form-group">
-                        <label>Nombre</label>
+                        <label>Nombre(S)</label>
                           <input type="text" name="nombres" class="form-control" value="<?php echo $user_obj['nombres']; ?>">
                       </div>
                       <div class="form-group">
                         <label>Primer Apellido</label>
                           <input type="text" name="primer_apellido" class="form-control" value="<?php echo $user_obj['primer_apellido']; ?>">
                       </div>
+                      <div class="form-group">
+                        <label>Segundo Apellido</label>
+                          <input type="text" name="segundo_apellido" class="form-control" value="<?php echo $user_obj['segundo_apellido']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Puesto</label>
+                          <input type="text" name="puesto" class="form-control" value="<?php echo $user_obj['puesto']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Número de Teléfono</label>
+                          <input type="text" name="telefono" class="form-control" value="<?php echo $user_obj['telefono']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Observaciones</label>
+                          <input type="text" name="observaciones" class="form-control" value="<?php echo $user_obj['observaciones']; ?>">
+                      </div>
+                      
                       <div class="form-group">
                         <button type="submit" class="btn btn-danger btn-block">Actualizar Datos</button>
                       </div>

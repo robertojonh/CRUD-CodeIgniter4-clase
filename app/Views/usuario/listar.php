@@ -50,9 +50,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
+                                    <th scope="col">USERNAME</th>
                                     <th scope="col">NOMBRES</th>
                                     <th scope="col">APELLIDO PATERNO</th>
                                     <th scope="col">APELLIDO MATERNO</th>
+                                    <th scope="col">PUESTO</th>
                                     <th scope="col">OBSERVACIONES</th>
                                     <th scope="col">OPCIONES</th>
                                 </tr>
@@ -61,9 +63,11 @@
                 <?php foreach($usuario as $usuario){  ?>
                             <tr>
                                <td><?=$usuario['id'] ?></td>
+                               <td><?=$usuario['username']?></td>
                                 <td><?=$usuario['nombres']?></td>
                                 <td><?=$usuario['primer_apellido']; ?></td>
                                 <td><?=$usuario['segundo_apellido']; ?></td>
+                                <td><?=$usuario['puesto']?></td>
                                 <td><?=$usuario['observaciones']; ?></td>
                                 <td>
                                 <a name="" id="" class="btn btn-primary" href="<?php echo base_url('Usuario/edit_user2/'.$usuario['id']);?>" role="button">Editar</a>

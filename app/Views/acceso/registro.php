@@ -33,8 +33,20 @@
                     </div>
 
                     <!-- Username -->
-                    <div class="mb-4">
+                    <div class="mb-2">
                         <input type="text" class="form-control" name="username" inputmode="text" autocomplete="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>" required />
+                    </div>
+                    <!-- Nombres -->
+                    <div class="mb-2">
+                        <input type="text" class="form-control" name="nombres" inputmode="text" autocomplete="nombres" placeholder="Nombres" required />
+                    </div>
+                    <!-- Primer Apellido -->
+                    <div class="mb-2">
+                        <input type="text" class="form-control" name="primer_apellido" inputmode="text" autocomplete="primer_apelldio" placeholder="Primer Apellido" required />
+                    </div>
+                    <!-- Segundo apellido -->
+                    <div class="mb-4">
+                        <input type="text" class="form-control" name="segundo_apellido" inputmode="text" autocomplete="segundo_apellido" placeholder="Segundo Apellido" required />
                     </div>
 
                     <!-- Password -->
