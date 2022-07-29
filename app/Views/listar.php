@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <?= $this->include('cabecera/header.php');?>
+    <link href="<?php echo base_url(); ?>/assets/src/assets/css/light/components/list-group.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>/assets/src/assets/css/light/users/user-profile.css" rel="stylesheet" type="text/css" />
+
+<link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/components/list-group.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/users/user-profile.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="layout-boxed" data-bs-spy="scroll" data-bs-target="#navSection" data-bs-offset="140">
       
@@ -38,6 +43,7 @@
                     <!-- Inicia la tabla -->
                     <div class="row layout-top-spacing">
                     <h3><br>Hola, listare alumnos a continuacion:</h3>
+
                     </div>
 
                     <div class="d-flex justify-content-end">
@@ -136,6 +142,6 @@
     <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 
     <script>var base_url="<?php echo base_url();?>";</script>
-    <script src="<?php echo base_url(); ?>/assets/src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

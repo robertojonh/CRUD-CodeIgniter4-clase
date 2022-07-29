@@ -24,7 +24,7 @@
                     </div>
                 <?php endif ?>
 
-                <form action="<?= url_to('register') ?>" method="post">
+                <form action="<?php echo base_url('/probando');?>" method="post">
                     <?= csrf_field() ?>
 
                     <!-- Email -->

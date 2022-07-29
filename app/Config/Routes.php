@@ -36,7 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/view_user', 'Persona::index');
+$routes->get('/view_user', 'Persona::perfil');
 $routes->get('create', 'Persona::create');
 $routes->post('creado', 'Persona::store');
 $routes->get('edit_user/(:num)', 'Persona::singleUser/$1');
@@ -47,17 +47,24 @@ $routes->get('/singup', 'Persona::singup');
 
 $routes->get('/acceder', 'Acceso::acceder');
 $routes->post('/acceder', 'Acceso::acceder_login');
+
+$routes->get('/register', 'Acceso::register');
+$routes->post('/probando', 'Acceso::probando_shield');
+
 $routes->get('/recuperar', 'Acceso::recuperar');
 $routes->get('/salir', 'Acceso::salir');
 
-$routes->get('/probando', 'Acceso::probando_shield');
+
 $routes->get('/Edificios', 'Edificios::listado');
 $routes->get('/Edificios/nuevo', 'Edificios::nuevo');
 $routes->post('/Edificios/nuevo', 'Edificios::guardar');
 
 
 $routes->get('/Usuario/perfil', 'Usuario::perfil');
-
+$routes->get('/Usuario/editar', 'Usuario::editar_perfil');
+$routes->get('/Usuario/listar', 'Usuario::listado');
+$routes->get('Usuario/edit_user2/(:num)', 'Usuario::singleUser2/$1');
+$routes->post('Usuario/update2', 'Usuario::update2');
 service('auth')->routes($routes);
 
 /*

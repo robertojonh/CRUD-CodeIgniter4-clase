@@ -46,6 +46,11 @@ class Acceso extends Controller{
             $data['configuracion'] = $this->configuracion;
             return view ('acceso/login',$data);
         }
+
+        public function register(){
+            $data['configuracion'] = $this->configuracion;
+            return view ('acceso/registro',$data);
+        }
         public function acceder_login(){
             $data['configuracion'] = $this->configuracion;
             $credentials = [
@@ -87,8 +92,8 @@ class Acceso extends Controller{
 
         $users = model('UserModel');
         $nuevo_usuario_datos = new User([
-            'username' => $username,
-            'email'    => $email,
+            'username' => $this->request->getVar('username'),
+            'email'    => $this->request->getVar('email'),
             'password' => $password,
         ]);
 
@@ -99,6 +104,10 @@ class Acceso extends Controller{
             $db->query('insert into users_details(username, nombres, primer_apellido, segundo_apellido, puesto, telefono, observaciones, foto) 
             values("'.$username.'","'.$nombres.'","'.$primer_apellido.'","'.$segundo_apellido.'","'.$puesto.'","'.$telefono.'","'.$observaciones.'","'.$foto.'")');
         } else { echo "no se dio de alta el usuario"; }
+        
+        return $this->response->redirect(base_url('/view_user'));
     }
+
+
 
 }
