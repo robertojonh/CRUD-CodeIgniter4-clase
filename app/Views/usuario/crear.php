@@ -26,8 +26,8 @@
               <div class="page-meta">
                 <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo base_url('/view_user');?>">Tabla</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Crear</li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url('/Usuario/listar');?>">Tabla</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Formulario Crear Nuevo usuario</li>
                   </ol>
                 </nav>
               </div>

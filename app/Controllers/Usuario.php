@@ -66,13 +66,11 @@ class Usuario extends Controller{
     }
 
     public function editar_perfil(){
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
         $data['sistema_funcion'] = "perfil";
         $data['usuario'] = $this->datos_usuario();
-        $data['sistema_clase'] = "Acceso";
-        $data['sistema_funcion'] = "acceder";
-
         $data['usuario']['usuario_username'] = 'ricardooax';
         $data['usuario']['usuario_puesto'] = 'Developer';
 
@@ -105,7 +103,7 @@ class Usuario extends Controller{
     public function singleUser2($id = null){
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_funcion'] = "listado";
         $data['usuario'] = $this->datos_usuario();
         $userModel2 = new UsuarioC();
         $data['user_obj'] = $userModel2->where('id', $id)->first();
@@ -135,7 +133,7 @@ class Usuario extends Controller{
         if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_funcion'] = "listado";
         $data['usuario'] = $this->datos_usuario();
         return view ('usuario/crear',$data);
     }

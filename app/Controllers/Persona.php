@@ -39,7 +39,7 @@ class Persona extends Controller{
           
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Personas";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_funcion'] = "listado2";
         $data['usuario'] = $this->datos_usuario();
         return view('crear',$data);
     }
@@ -74,7 +74,7 @@ class Persona extends Controller{
           
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Personas";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_funcion'] = "listado2";
         $data['usuario'] = $this->datos_usuario();
         $userModel = new Personas();
         $data['user_obj'] = $userModel->where('id', $id)->first();
