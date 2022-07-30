@@ -49,7 +49,7 @@ class Usuario extends Controller{
           
         $data['configuracion'] = $this->configuracion;
         $data['sistema_clase'] = "Usuario";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_funcion'] = "listar";
         $data['usuario'] = $this->datos_usuario();
         
         $data['sistema_funcion'] = "listado";

@@ -24,8 +24,8 @@ class Persona extends Controller{
     public function perfil(){
         if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $data['configuracion'] = $this->configuracion;
-        $data['sistema_clase'] = "Usuario";
-        $data['sistema_funcion'] = "perfil";
+        $data['sistema_clase'] = "Personas";
+        $data['sistema_funcion'] = "listado2";
         $data['usuario'] = $this->datos_usuario();
         
         $d_persona = new Personas();
@@ -35,7 +35,13 @@ class Persona extends Controller{
     }
     // add user form
     public function create(){
-        return view('crear');
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
+          
+        $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Personas";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
+        return view('crear',$data);
     }
     public function singin(){
         return view('inicioSesion/singin');
@@ -47,6 +53,12 @@ class Persona extends Controller{
     // insert data
     
     public function store() {
+       
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
+        $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Personas";
+        $data['sistema_funcion'] = "listado2";
+        $data['usuario'] = $this->datos_usuario();
         $userModel = new Personas();
         $data = [
             'nombre' => $this->request->getVar('nombre'),
@@ -58,6 +70,12 @@ class Persona extends Controller{
     
     // show single user
     public function singleUser($id = null){
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
+          
+        $data['configuracion'] = $this->configuracion;
+        $data['sistema_clase'] = "Personas";
+        $data['sistema_funcion'] = "perfil";
+        $data['usuario'] = $this->datos_usuario();
         $userModel = new Personas();
         $data['user_obj'] = $userModel->where('id', $id)->first();
         return view('editar', $data);
@@ -65,6 +83,7 @@ class Persona extends Controller{
     // update user data
    
     public function update(){
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $userModel = new Personas();
         $id = $this->request->getVar('id');
         $data = [
@@ -77,6 +96,7 @@ class Persona extends Controller{
     
     // delete user
     public function delete($id = null){
+        if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
         $userModel = new Personas();
         $data['persona'] = $userModel->where('id', $id)->delete($id);
         return $this->response->redirect(base_url('/view_user'));
