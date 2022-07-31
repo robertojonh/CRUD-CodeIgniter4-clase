@@ -84,9 +84,9 @@ class Acceso extends Controller{
         $nombres = $this->request->getVar('nombres');
         $primer_apellido = $this->request->getVar('primer_apellido');
         $segundo_apellido = $this->request->getVar('segundo_apellido');
-        $puesto = 'Developer';
-        $telefono = '9511147641';
-        $observaciones = 'Administrador del sistema';
+        $puesto = $this->request->getVar('puesto');
+        $telefono = $this->request->getVar('telefono');
+        $observaciones = $this->request->getVar('observaciones');
         $foto = 'ricardo.png';
         $nivel = 0;
 
@@ -105,7 +105,7 @@ class Acceso extends Controller{
             values("'.$username.'","'.$nombres.'","'.$primer_apellido.'","'.$segundo_apellido.'","'.$puesto.'","'.$telefono.'","'.$observaciones.'","'.$foto.'")');
         } else { echo "no se dio de alta el usuario"; }
         
-        return $this->response->redirect(base_url('/view_user'));
+        return $this->response->redirect(base_url('/Usuario/listar'));
     }
 
 
