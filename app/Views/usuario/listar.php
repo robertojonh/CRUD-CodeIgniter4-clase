@@ -74,6 +74,7 @@
                                 <td><?=$usuario['observaciones']; ?></td>
                                 <td>
                                 <a name="" id="" class="btn btn-primary" href="<?php echo base_url('Usuario/edit_user2/'.$usuario['id']);?>" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-primary" href="<?php echo base_url('Usuario/eliminar/'.$usuario['id']);?>" role="button">Eliminar</a>
                                 </td>
                             </tr>
                 <?php } ?>

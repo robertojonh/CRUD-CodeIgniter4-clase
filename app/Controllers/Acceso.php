@@ -95,6 +95,7 @@ class Acceso extends Controller{
             'username' => $username,
             'email'    => $email,
             'password' => $password,
+            'active' => 1,
         ]);
 
         $nuevo_usuario_success = $users->save($nuevo_usuario_datos);

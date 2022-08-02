@@ -1,8 +1,16 @@
 <?php 
 namespace App\Controllers;
 use App\Models\UsuarioC;
+use App\Models\Auth;
 use App\Models\Personas;
+use CodeIgniter\Shield\Entities\User;
+use CodeIgniter\Shield\Models\UserModel;
+use CodeIgniter\Shield\Models\UserIdentityModel;
+
+
+
 use CodeIgniter\Controller;
+use Longman\TelegramBot\Entities\Update;
 
 class Usuario extends Controller{
     protected $helpers = ['auth'];
@@ -19,7 +27,9 @@ class Usuario extends Controller{
         $this->informacion_usuario = array();
         $db = db_connect();
         $informacion_usuario = $db->query('select u.id, u.username, u.created_at, ud.estatus, ud.nombres, ud.primer_apellido, ud.segundo_apellido, ud.puesto, ud.telefono, ud.observaciones, ud.foto, ud.nivel, au.type, au.secret, au.last_used_at from users u  left join users_details ud on u.username =  ud.username left join auth_identities au on u.id =  au.user_id where u.username = "'.auth()->getUser()->username.'"');
+        
         $ret =  $informacion_usuario->getResultArray();
+        
         return $ret[0];
     }
     public function perfil(){
@@ -57,7 +67,7 @@ class Usuario extends Controller{
         $data['usuario']['usuario_puesto'] = 'Developer';
 
         $db = db_connect();
-        $usuario = $db->query('SELECT u.id, u.username, u.created_at, ud.estatus, ud.nombres, ud.primer_apellido, ud.segundo_apellido, ud.puesto, ud.telefono, ud.observaciones, ud.foto, ud.nivel, au.type, au.secret, au.last_used_at from users u  left join users_details ud on u.username =  ud.username left join auth_identities au on u.id =  au.user_id ');
+        $usuario = $db->query('SELECT u.id,u.active, u.username, u.created_at, ud.estatus, ud.nombres, ud.primer_apellido, ud.segundo_apellido, ud.puesto, ud.telefono, ud.observaciones, ud.foto, ud.nivel, au.type, au.secret, au.last_used_at from users u  left join users_details ud on u.username =  ud.username left join auth_identities au on u.id =  au.user_id where u.active = 1');
         $data['usuarios'] =  $usuario->getResultArray();
 
 
@@ -107,6 +117,8 @@ class Usuario extends Controller{
         $data['usuario'] = $this->datos_usuario();
         $userModel2 = new UsuarioC();
         $data['user_obj'] = $userModel2->where('id', $id)->first();
+        $userModel3 = new Auth();
+        $data['user_obj2'] = $userModel3->where('id', $id)->first();
         return view('usuario/editarp', $data);
     }
     // update user data
@@ -115,6 +127,7 @@ class Usuario extends Controller{
         
         $userModel2 = new UsuarioC();
         $id = $this->request->getVar('id');
+        
         $data = [
             'username'  => $this->request->getVar('username'),
             'nombres' => $this->request->getVar('nombres'),
@@ -126,6 +139,21 @@ class Usuario extends Controller{
             
         ];
         $userModel2->update($id, $data);
+        $users = new UserModel();
+        $nuevo_usuario_datos =[
+            'username' => $this->request->getVar('username'),
+        ];
+        $users->update($id,$nuevo_usuario_datos);
+
+$users2 = new UserIdentityModel();
+        $nuevo_usuario_datos2 = [
+            'secret' => $this->request->getVar('email'),
+            //'secret2' => $this->request->getVar('password'),
+        ];
+        $users2->update($id,$nuevo_usuario_datos2);
+        
+        //$users2->save($id,$nuevo_usuario_datos2);
+        
         return $this->response->redirect(base_url('/Usuario/listar'));
     }
 
@@ -137,5 +165,21 @@ class Usuario extends Controller{
         $data['usuario'] = $this->datos_usuario();
         return view ('usuario/crear',$data);
     }
+
+        // delete user
+        public function delete($id = null){
+            if (! auth()->loggedIn()) { return redirect()->to(base_url().'/acceder/'); }
+            $userModel = new UserModel();
+            $nuevo_usuario_datos =[
+                'active' => '0',
+            ];
+            $data['usuario'] = $userModel->where('id', $id)->update($id,$nuevo_usuario_datos);
+            $data['usuario'] = $userModel->where('id', $id)->delete($id);
+            $users2 = new Auth();
+            $data['usuario'] = $users2->where('id', $id)->delete($id);
+            $users3 = new UsuarioC();
+            $data['usuario'] = $users3->where('id', $id)->delete($id);
+            return $this->response->redirect(base_url('/Usuario/listar'));
+        }    
 
 }

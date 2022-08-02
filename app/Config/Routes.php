@@ -64,6 +64,7 @@ $routes->get('/Usuario/listar', 'Usuario::listado');
 $routes->get('Usuario/edit_user2/(:num)', 'Usuario::singleUser2/$1');
 $routes->post('Usuario/update2', 'Usuario::update2');
 $routes->get('/Usuario/crear', 'Usuario::crear');
+$routes->get('/Usuario/eliminar/(:num)', 'Usuario::delete/$1');
 
 
 service('auth')->routes($routes);
