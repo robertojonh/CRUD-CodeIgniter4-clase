@@ -87,7 +87,7 @@ class Acceso extends Controller{
         $puesto = $this->request->getVar('puesto');
         $telefono = $this->request->getVar('telefono');
         $observaciones = $this->request->getVar('observaciones');
-        $foto = 'ricardo.png';
+        $foto = 'fotoperfil2.png';
         $nivel = 0;
 
         $users = model('UserModel');

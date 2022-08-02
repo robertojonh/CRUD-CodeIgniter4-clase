@@ -69,7 +69,7 @@
                                 <td>
                                     <a name="" id="" class="btn btn-primary" href="<?php echo base_url('edit_user/'.$persona['id']);?>" role="button">Editar</a>
                                     <a name="" id="" class="btn btn-danger" href="<?php echo base_url('delete/'.$persona['id']);?>" role="button">Eliminar</a>
-                                    <input type="button" class="btn btn-danger" onclick="confirmar(event)"></input>
+                                    <input name="Eliminar" value="Eliminar" type="button" class="btn btn-danger" onclick="confirmar(event)"></input>
                                     
                                     <script>
         function confirmar(){

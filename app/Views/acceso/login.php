@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title><?=$configuracion['nombre_sistema'];?> :: v<?=$configuracion['version'];?> :: <?=$configuracion['nombre_cliente'];?></title>
+    <title>Inicio de Sesión</title>
     <link rel="icon" type="image/x-icon" href="<?php echo base_url(); ?>/assets/src/assets/img/favicon.ico"/>
-    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-light-menu/css/light/loader.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-light-menu/css/dark/loader.css" rel="stylesheet" type="text/css" />
-    <script src="<?php echo base_url(); ?>/assets/layouts/vertical-light-menu/loader.js"></script>
+    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/css/light/loader.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/css/dark/loader.css" rel="stylesheet" type="text/css" />
+    <script src="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/loader.js"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/assets/src/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/css/light/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/src/assets/css/light/authentication/auth-cover.css" rel="stylesheet" type="text/css" />
     
-    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-light-menu/css/light/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>/assets/src/assets/css/light/authentication/auth-boxed.css" rel="stylesheet" type="text/css" />
-    
-    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-light-menu/css/dark/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/authentication/auth-boxed.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/css/dark/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>/assets/src/assets/css/dark/authentication/auth-cover.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     
 </head>
@@ -35,8 +35,26 @@
     
             <div class="row">
     
-                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-12 d-flex flex-column align-self-center mx-auto">
-                    <div class="card mt-3 mb-3">
+                <div class="col-6 d-lg-flex d-none h-100 my-auto top-0 start-0 text-center justify-content-center flex-column">
+                    <div class="auth-cover-bg-image"></div>
+                    <div class="auth-overlay"></div>
+                        
+                    <div class="auth-cover">
+    
+                        <div class="position-relative">
+    
+                            <!--<img src="<?php echo base_url(); ?>/assets/src/assets/img/auth-cover.svg" alt="auth-img">-->
+                            <img src="<?php echo base_url(); ?>/uploads/perfil/roc.png" alt="auth-img">
+                            <h2 class="mt-5 text-white font-weight-bolder px-2">Ingresa a la comunidad de Desarrolladores Expertos</h2>
+                            <p class="text-white px-2">Fácil de configurar con una gran experiencia de usuario. Que esperas, registrate.</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-12 d-flex flex-column align-self-center ms-lg-auto me-lg-0 mx-auto">
+                    <div class="card">
                         <div class="card-body">
     
                             <div class="row">
@@ -46,30 +64,39 @@
                                     <p><?=$configuracion['nombre_cliente'];?></p>
                                     
                                 </div>
-                                    <form method="POST">
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Usuario</label>
-                                            <input type="text" class="form-control" name="user" id="user">
+                                <!-- Formulario -->
+                                <form method="POST">
+
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Usuario</label>
+                                        <input type="text" class="form-control" name="user" id="user">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-4">
+                                        <label class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" name="password" id="password">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <div class="form-check form-check-primary form-check-inline">
+                                            <input class="form-check-input me-3" type="checkbox" id="form-check-default">
+                                            <label class="form-check-label" for="form-check-default">
+                                                Remember me
+                                            </label>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="mb-4">
-                                            <label class="form-label">Contraseña</label>
-                                            <input type="password" class="form-control" name="password" id="password">
-                                        </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="mb-4">
+                                        <button class="btn btn-secondary w-100">Acceder</button>
                                     </div>
-                                    
-                                    <div class="col-12">
-                                        <div class="mb-4">
-                                            <button class="btn btn-secondary w-100">Acceder</button>
-                                        </div>
-                                    </div>
+                                </div>
+                                
                                 </form>
-                                
-                               
-                                
-                               
 
                                 <div class="col-12">
                                     <div class="text-center">
@@ -77,6 +104,43 @@
                                     </div>
                                     <div class="text-center">
                                         <p class="mb-0">¿no tienes usuario? <a href="<?php echo base_url('/register');?>" class="text-warning">Clic aquí para crer un nuevo usuario</a></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mb-4">
+                                    <div class="">
+                                        <div class="seperator">
+                                            <hr>
+                                            <div class="seperator-text"> <span>Or continue with</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-4 col-12">
+                                    <div class="mb-4">
+                                        <button class="btn  btn-social-login w-100 ">
+                                            <img src="<?php echo base_url(); ?>/assets/src/assets/img/google-gmail.svg" alt="" class="img-fluid">
+                                            <span class="btn-text-inner">Google</span>
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4 col-12">
+                                    <div class="mb-4">
+                                        <button class="btn  btn-social-login w-100">
+                                            <img src="<?php echo base_url(); ?>/assets/src/assets/img/github-icon.svg" alt="" class="img-fluid">
+                                            <span class="btn-text-inner">Github</span>
+                                        </button>
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-4 col-12">
+                                    <div class="mb-4">
+                                        <button class="btn  btn-social-login w-100">
+                                            <img src="<?php echo base_url(); ?>/assets/src/assets/img/twitter.svg" alt="" class="img-fluid">
+                                            <span class="btn-text-inner">Twitter</span>
+                                        </button>
                                     </div>
                                 </div>
                                 
@@ -93,7 +157,7 @@
     </div>
     
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="<?php echo base_url(); ?>/assets/src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
 

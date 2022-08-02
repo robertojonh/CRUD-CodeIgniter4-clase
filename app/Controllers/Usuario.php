@@ -145,10 +145,12 @@ class Usuario extends Controller{
         ];
         $users->update($id,$nuevo_usuario_datos);
 
-$users2 = new UserIdentityModel();
+        $users2 = new UserIdentityModel();
+        $passwords = service('passwords');
+        $contra = $this->request->getVar('password');
         $nuevo_usuario_datos2 = [
             'secret' => $this->request->getVar('email'),
-            //'secret2' => $this->request->getVar('password'),
+            'secret2' => $passwords->hash($contra),
         ];
         $users2->update($id,$nuevo_usuario_datos2);
         
@@ -175,10 +177,9 @@ $users2 = new UserIdentityModel();
             ];
             $data['usuario'] = $userModel->where('id', $id)->update($id,$nuevo_usuario_datos);
             $data['usuario'] = $userModel->where('id', $id)->delete($id);
-            $users2 = new Auth();
-            $data['usuario'] = $users2->where('id', $id)->delete($id);
-            $users3 = new UsuarioC();
-            $data['usuario'] = $users3->where('id', $id)->delete($id);
+            //$users2 = new Auth();
+            //$users3 = new UsuarioC();
+            //$data['usuario'] = $users3->where('id', $id)->delete($id);
             return $this->response->redirect(base_url('/Usuario/listar'));
         }    
 
