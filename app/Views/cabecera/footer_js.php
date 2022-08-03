@@ -6,6 +6,7 @@
     <script src="<?php echo base_url(); ?>/assets/src/plugins/src/mousetrap/mousetrap.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/layouts/vertical-dark-menu/app.js"></script>
     <script src="<?php echo base_url(); ?>/assets/src/assets/js/custom.js"></script>
+    
 
     <!-- BEGIN THEME GLOBAL STYLE -->
     <script src="<?php echo base_url(); ?>/assets/src/assets/js/scrollspyNav.js"></script>

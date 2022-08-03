@@ -2,8 +2,6 @@
 namespace App\Controllers;
 use App\Models\UsuarioC;
 use App\Models\Auth;
-use App\Models\Personas;
-use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Models\UserModel;
 use CodeIgniter\Shield\Models\UserIdentityModel;
 
@@ -154,9 +152,11 @@ class Usuario extends Controller{
         ];
         $users2->update($id,$nuevo_usuario_datos2);
         
-        //$users2->save($id,$nuevo_usuario_datos2);
-        
         return $this->response->redirect(base_url('/Usuario/listar'));
+        
+        //auth()->logout();
+        //return redirect()->to(base_url().'/acceder/'); 
+        //return $this->response->redirect(base_url('/Usuario/listar'));
     }
 
     public function crear(){

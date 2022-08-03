@@ -44,12 +44,11 @@
                         <label>email</label>
                           <input type="text" name="email" class="form-control" value="<?=$user_obj2['secret']?>">
                       </div>
-<!-- Password -->
-<div class="form-group">
-<label>Contraseña</label>
+                    <!-- Password -->
+                    <div class="form-group">
+                      <label>Contraseña</label>
                         <input type="password" class="form-control" name="password" inputmode="text" autocomplete="new-password"  required />
                     </div>
-
                     <!-- Password (Again) -->
                     <div class="form-group">
                     <label>Confirma la contraseña</label>

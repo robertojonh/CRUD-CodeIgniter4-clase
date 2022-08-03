@@ -87,7 +87,7 @@ class Acceso extends Controller{
         $puesto = $this->request->getVar('puesto');
         $telefono = $this->request->getVar('telefono');
         $observaciones = $this->request->getVar('observaciones');
-        $foto = 'fotoperfil2.png';
+        $foto = 'fotoperfil3.png';
         $nivel = 0;
 
         $users = model('UserModel');
@@ -108,7 +108,4 @@ class Acceso extends Controller{
         
         return $this->response->redirect(base_url('/Usuario/listar'));
     }
-
-
-
 }
